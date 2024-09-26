@@ -127,7 +127,7 @@ impl Generic {
                     .get_queue_num()
                     .map_err(Error::VhostUserGetQueueMaxNum)? as usize
             } else {
-                MIN_NUM_QUEUES
+                self.vu_common.vu_num_queues
             };
 
         if self.vu_common.vu_num_queues > backend_num_queues {
